@@ -1,16 +1,16 @@
 package edu.ucaldas.creacionales.singleton;
 
-public class DataBaseConnection {
+public class DatabaseConnection {
     // Instancia única
-    private static DataBaseConnection instance;
+    private static DatabaseConnection instance;
 
     // Constructor privado para evitar instanciación externa
-    private DataBaseConnection() {}
+    private DatabaseConnection() {}
 
     // Método estático para obtener la instancia (thread-safe con synchronized)
-    public static synchronized DataBaseConnection getInstance() {
+    public static synchronized DatabaseConnection getInstance() {
         if (instance == null) {
-            instance = new DataBaseConnection();
+            instance = new DatabaseConnection();
         }
         return instance;
     }

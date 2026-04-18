@@ -6,4 +6,14 @@ public abstract class ProductDecorator implements Product {
     public ProductDecorator(Product product) {
         this.product = product;
     }
+
+    @Override
+    public double getPrice() {
+        return product.getPrice(); // Delega al producto interno
+    }
+
+    @Override
+    public String getDescription() {
+        return product.getDescription(); // Delega al producto interno
+    }
 }

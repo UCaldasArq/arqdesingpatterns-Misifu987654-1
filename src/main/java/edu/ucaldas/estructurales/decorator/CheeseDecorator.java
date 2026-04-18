@@ -1,17 +1,24 @@
 package edu.ucaldas.estructurales.decorator;
 
-public class CheeseDecorator extends ProductDecorator {
-    public CheeseDecorator(Product product) {
-        super(product);
+public class CheeseDecorator implements Product {
+    private Product baseProduct;
+
+    public CheeseDecorator(Product baseProduct) {
+        this.baseProduct = baseProduct;
     }
 
+    @Override
     public double getPrice() {
-        // TODO
-        return 0;
+        return baseProduct.getPrice() + 2.5; 
     }
 
+    @Override
     public String getDescription() {
-        // TODO
-        return null;
+        return baseProduct.getDescription() + " + Queso";
+    }
+
+    @Override
+    public double getCost() {
+        return getPrice();
     }
 }
